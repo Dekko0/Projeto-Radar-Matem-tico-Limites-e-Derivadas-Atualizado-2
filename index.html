@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radar Matemático</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="main-wrapper">
+    <header>
+        <h1>Radar Matemático</h1>
+        <p>Trabalho AV1</p>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-btn active" onclick="abrirAba('calculadora')">Calculadora</button>
+        <button class="tab-btn" onclick="abrirAba('participantes')">Participantes</button>
+    </nav>
+
+    <section id="calculadora" class="tab-content active">
+        <div class="card">
+            <h3>Entrada de Dados</h3>
+            <div class="header-inputs">
+                <span>Tempo (s)</span>
+                <span>Posição (m)</span>
+            </div>
+            <div id="inputs-container"></div>
+            
+            <div class="actions">
+                <button class="btn btn-secondary" onclick="addCampo()">+ Adicionar Ponto</button>
+                <button class="btn btn-primary" onclick="calcular()">Calcular Resultados</button>
+            </div>
+        </div>
+
+        <div id="resultados" class="results-container"></div>
+
+        <div class="card graph-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3>Gráfico de Deslocamento</h3>
+        <button class="btn btn-secondary" onclick="baixarGrafico()" style="background: #8e44ad; font-size: 0.9rem;">
+            ⬇ Salvar Imagem
+        </button>
+    </div>
+    <canvas id="grafico"></canvas>
+</div>
+    </section>
+
+    <section id="participantes" class="tab-content">
+        
+        <div class="teacher-container">
+            <div class="member-card">
+                <img src="./img/foto-docente.jpg" alt="Foto do Docente" onerror="this.src='https://via.placeholder.com/100'">
+                <h3>Vanessa Nascimento Monteiro</h3>
+                <p>Docente / Orientador</p>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+
+        <div class="team-grid">
+            <div class="member-card">
+                <img src="./img/foto-joao_gabriel.jpg" alt="Foto do Aluno">
+                <h3>João Gabriel dos Santos de Souza Brito</h3>
+                <p>Cálculos e Lógica</p>
+            </div>
+
+            <div class="member-card">
+                <img src="./img/foto-andre_carvalho.jpg" alt="Foto do Aluno">
+                <h3>André Silva Carvalho</h3>
+                <p>Desenvolvimento Frontend e Backend</p>
+            </div>
+
+            <div class="member-card">
+                <img src="./img/Foto-andre_gomes.jpg" alt="Foto do Aluno">
+                <h3>André Gomes Costa</h3>
+                <p>Design e Documentação</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
